@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: ${{ values.dl_storage_account_name }}
+  tags:
+    - azure
+    - hod
+    - datalake
+  {%- if values.description %}
+  description: ${{ values.description }}
+  {%- else %}
+  description: This is az storage account for tenant ${{ values.tenant_name }}
+  {%- endif %}
+  annotations:
+    github.com/project-slug: ${{ values.destination.owner + "/" + values.destination.repo }}
+    backstage.io/techdocs-ref: dir:.
+spec:
+  type: az_storage
+  system: Demo
+  lifecycle: experimental
+  owner: ${{ values.tenant_name }}
