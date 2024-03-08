@@ -6,3 +6,4 @@ metadata:
 spec:
   targets:
     - ./templates/azure-storage/template.yaml
+    - ./templates/aws-storage/template.yaml
