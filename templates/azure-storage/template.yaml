@@ -67,8 +67,8 @@ spec:
           title: Resource Group
           type: string
           maxLength: 30
-          pattern: '^DEMO-DL-([a-zA-Z][a-zA-Z]*)(-[a-zA-Z]+)*-rg$'
-          description: Fill in a Azure Resource Group Name in format DEMO-DL-<tenant_name>-<env>-rg
+          pattern: '^DEMO-([a-zA-Z][a-zA-Z]*)(-[a-zA-Z]+)*-rg$'
+          description: Fill in a Azure Resource Group Name in format DEMO-<tenant_name>-<env>-rg
     - title: Choose a github location
       required:
         - repoUrl
@@ -94,8 +94,8 @@ spec:
           tenant_name: ${{ parameters.tenant }}
           location: ${{ parameters.location }}
           resource_group_name: ${{ parameters.resourcegroup }}
-          dl_storage_account_name: ${{ parameters.name }}
-          dl_container_name: ${{ parameters.containername }}
+          storage_account_name: ${{ parameters.name }}
+          container_name: ${{ parameters.containername }}
           destination: ${{ parameters.repoUrl | parseRepoUrl }}
           subscription: ${{ parameters.subscription }}
 
